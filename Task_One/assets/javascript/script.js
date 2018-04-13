@@ -11,7 +11,7 @@ $(document).ready(function(){
     	if($('#dataInput').val() === '') {
     		alert('Please enter the message');
     	} else {
-	        $('.chat_user_data_position').append('<br/><span>' + $('#dataInput').val() + '</span>');
+	        $('.chat_user_data_position').append('<br/><span style="float:right;">' + $('#dataInput').val() + '</span>');
 	        $('#dataInput').val('');
 	        $('#dataInput').attr("placeholder", "Type your message.....");
 	    }
