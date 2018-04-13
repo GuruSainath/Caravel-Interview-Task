@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Caravel Chat-Box</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<!-- custom made css -->
+	<link rel="stylesheet" type="text/css" href="assets/stylesheets/style.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<!-- body container as fixed to screen height -->
+	<div class="main_container">
+		<!-- navbar -->
+		<nav class="navbar main_container_navbar" style="">
+			<div class="container">
+				<a class="navbar-brand" href="#" style="color: black;">
+					Caravel chat-box
+				</a>
+				<div class="Theme_position float-right">
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> Theme </button> 
+				</div>
+				<!-- Modal -->
+				<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+				 	<div class="modal-dialog" role="document">
+				    	<div class="modal-content">
+				    		<div class="modal-header">
+						        <h5 class="modal-title custom_color">Choose the color pallete</h5>
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						        	<span aria-hidden="true">&times;</span>
+						        </button>
+						     </div>
+				      		<div class="modal-body">
+				      			<div class="custom_color">Basic color</div>
+				      			<div class="row">
+				        			<div class="col-12">
+				        				<button class="btn btn-info color_pallete" onclick="color('#fbfbfb')" style="background: #fbfbfb;">  </button>
+				        			</div>
+				        		</div>
+				      			<div style="margin-top: 2%;" class="custom_color">Light color</div>
+				        		<div class="row">
+				        			<div class="col-12">
+				        				<button class="btn btn-info color_pallete" onclick="color('#FF4B4B')" style="background: #FF4B4B;">  </button>
+				        				<button class="btn btn-info color_pallete" onclick="color('#FFB34B')" style="background: #FFB34B;">  </button>
+				        				<button class="btn btn-info color_pallete" onclick="color('#FFF14B')" style="background: #FFF14B;">  </button>
+				        				<button class="btn btn-info color_pallete" onclick="color('#4BFFF4')" style="background: #4BFFF4;">  </button>
+				        				<button class="btn btn-info color_pallete" onclick="color('#4BB0FF')" style="background: #4BB0FF;">  </button>
+				        				<button class="btn btn-info color_pallete" onclick="color('#714BFF')" style="background: #714BFF;">  </button>
+				        				<button class="btn btn-info color_pallete" onclick="color('#C04BFF')" style="background: #C04BFF;">  </button>
+				        				<button class="btn btn-info color_pallete" onclick="color('#B2E4F4')" style="background: #B2E4F4;">  </button>
+				        				<button class="btn btn-info color_pallete" onclick="color('#FF4BDC')" style="background: #FF4BDC;">  </button>
+				        				<button class="btn btn-info color_pallete" onclick="color('#FF4BA5')" style="background: #FF4BA5;">  </button>
+				        				<button class="btn btn-info color_pallete" onclick="color('#FF4B4B')" style="background: #FF4B4B;">  </button>
+				        			</div>
+				        		</div>
+				        		<div style="margin-top: 2%;" class="custom_color">Special Themes</div>
+				      			<div class="row">
+				        			<div class="col-8">
+				        				<button class="btn btn-info color_pallete" style="background: #191919;">  </button>
+				        				<button class="btn btn-info color_pallete" style="background: #566573;">  </button>
+				        				<button class="btn btn-info color_pallete" style="background: #D5D8DC;">  </button>
+				        			</div>
+				        			<div class="col-4" style="margin-top: 1%;">
+				        				<button class="btn btn-primary" onclick="customColor('#191919','#566573','#D5D8DC')"> Get Theme </button>
+				        			</div>
+				        		</div>
+				      		</div>
+				      		<div class="modal-footer">
+						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						    </div>
+				    	</div>
+				  	</div>
+				</div>
+			</div>
+		</nav>
+		<!-- Main body chat container -->
+		<div class="container-fluid chat_box_main_container">
+			<!-- setings data place -->
+			<div class="row" style="border-bottom: 1px solid black;">
+				<div class="col-3 chat_settings chat_box_border">
+					Caravel_chat_box
+				</div>
+				<div class="col-9 chat_settings">
+					Caravel
+				</div>
+			</div>
+			<!-- chat area -->
+			<div class="row chat_area_data">
+				<!-- users who are online -->
+				<div class="col-3 chat_box_settings chat_box_border chat_box_height">
+					<button style="border:transparent;background:transparent;width: 100%">
+					<div class="row" style="border-bottom: 1px solid black;">
+						<div class="col-2 chat_box_users_icon">
+							<img src="assets/images/user_icon.png" title="Profile picture" width="45">
+						</div>
+						<div class="col-9 chat_box_users_name">
+							Caravel
+						</div>
+					</div>
+					</button>
+					<div class="row" style="border-bottom: 1px solid black;">
+						<div class="col-2 chat_box_users_icon">
+							<img src="assets/images/user_icon.png" title="Profile picture" width="45">
+						</div>
+						<div class="col-9 chat_box_users_name">
+							chat_user_name
+						</div>
+					</div>
+				</div>
+				<!-- dynamic chat data of a particular user -->
+				<div class="col-6 chat_box_chat_area chat_box_border chat_box_height">
+					<!-- chat content -->
+					<div class="chat_content_container">
+						<div class="chat_user_data_position">
+							<span>
+								Hello, user.
+							</span>
+						</div>
+					</div>
+					<!-- chat input data -->
+					<div class="chat_content_input">
+						<div class="row">
+							<div class="col-10 form-group chat_box_input_position">
+								<input type="text" class="form-control chat_box_input" tabindex="1" placeholder="Type your message....." id="dataInput" />
+							</div>
+							<div class="col-2 form-group">
+								<div class="chat_box_button_position">
+									<button type="button" class="btn btn-primary" tabindex="2" id="appendData"> Send </button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- user data/description -->
+				<div class="col-3 chat_box_users chat_box_height">
+					<div>
+						<!-- name and photo of an user -->
+						<div class="row">
+							<div class="col-2 chat_box_users_icon">
+								<img src="assets/images/user_icon.png" title="Profile picture" width="45">
+							</div>
+							<div class="col-9 chat_box_users_name">
+								Caravel
+							</div>
+						</div>
+					</div>
+					<div id="clickbutton">
+						<button type="button" class="btn btn-primary chat_details_button">Details</button>
+					</div>
+					<!-- full details about the user -->
+					<div class="chat_box_users_full_details hidedata">
+						<table>
+							<tr>
+								<td>user_id</td>
+								<td>:</td>
+								<td> chat_user_user_id</td>
+							</tr>
+							<tr>
+								<td>Name</td>
+								<td>:</td>
+								<td> Caravel</td>
+							</tr>
+							<tr>
+								<td>email</td>
+								<td>:</td>
+								<td> chat_user_emial</td>
+							</tr>
+							<tr>
+								<td>D.O.B</td>
+								<td>:</td>
+								<td> chat_user_d.o.b</td>
+							</tr>
+							<tr>
+								<td>Mobile</td>
+								<td>:</td>
+								<td> chat_user_mobile</td>
+							</tr>
+						</table>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+
+	<!-- jQuery first, then Tether, then Bootstrap JS. -->
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="assets/javascript/script.js"></script>
+</body>
+</html>
