@@ -1,17 +1,18 @@
 <template>
   <b-container>
+    <br/><br/><br/><br/>
     <b-row>
       <b-col cols="3">
         <draggable class="list-group" element="ul" v-model="list.tasks" :options="dragOptions" :move="onMove" @end="maindataset">
           <transition-group type="transition" :name="'flip-list'">
             <li class="list-group-item" v-for="(element, index) in list.tasks" :key="element.order">
               {{element.name}}
-              <b-badge pill class="float-right">{{ element.order }} / {{ index }}</b-badge>
+              <b-badge pill class="float-right">{{ element.order }}/{{index}}</b-badge>
             </li>
           </transition-group>
         </draggable>
       </b-col>
-      <b-col>
+      <b-col cols="9">
         <pre>
           {{ dataString }}
         </pre>
@@ -36,51 +37,51 @@ export default {
         order: 0,
         tasks: [
           {
-            // id: 0,
+            id: 0,
             name: 'Design a Website',
-            // content: '',
-            // is_completed: true,
-            // scheduled_on: null,
-            // remind_on: null,
-            // parent: null,
-            // listed: 1,
-            // users: [],
+            content: '',
+            is_completed: true,
+            scheduled_on: null,
+            remind_on: null,
+            parent: null,
+            listed: 1,
+            users: [],
             order: 0
           },
           {
-            // id: 1,
+            id: 1,
             name: 'Hello Test',
-            // content: '',
-            // is_completed: false,
-            // scheduled_on: null,
-            // remind_on: null,
-            // parent: null,
-            // listed: 1,
-            // users: [],
+            content: '',
+            is_completed: false,
+            scheduled_on: null,
+            remind_on: null,
+            parent: null,
+            listed: 1,
+            users: [],
             order: 1
           },
           {
-            // id: 2,
+            id: 2,
             name: 'Hello 1',
-            // content: '',
-            // is_completed: true,
-            // scheduled_on: null,
-            // remind_on: null,
-            // parent: null,
-            // listed: 1,
-            // users: [],
+            content: '',
+            is_completed: true,
+            scheduled_on: null,
+            remind_on: null,
+            parent: null,
+            listed: 1,
+            users: [],
             order: 2
           },
           {
-            // id: 3,
+            id: 7,
             name: 'today',
-            // content: '',
-            // is_completed: true,
-            // scheduled_on: null,
-            // remind_on: null,
-            // parent: null,
-            // listed: 1,
-            // users: [],
+            content: '',
+            is_completed: true,
+            scheduled_on: null,
+            remind_on: null,
+            parent: null,
+            listed: 1,
+            users: [],
             order: 3
           }
         ]
@@ -102,7 +103,8 @@ export default {
   computed: {
     dragOptions () {
       return {
-        ghostClass: 'mainanimation'
+        animation: 0,
+        ghostClass: 'ghost'
       }
     },
     dataString: function () {
@@ -119,9 +121,9 @@ export default {
   .no-move {
     transition: transform 0s;
   }
-  .mainanimation {
+  .ghost {
     opacity: .5;
-    background: #C8EBFB;
+    background: lightgray ;
   }
   .list-group {
     min-height: 20px;
