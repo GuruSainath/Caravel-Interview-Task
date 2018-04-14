@@ -4,12 +4,10 @@
     <b-row>
       <b-col cols="3">
         <draggable class="list-group" element="ul" v-model="list.tasks" :options="dragOptions" @end="maindataset">
-          <transition-group type="transition" :name="'flip-list'">
-            <li class="list-group-item" v-for="(element, index) in list.tasks" :key="element.order">
-              {{element.name}} ( {{element.id}} )
-              <b-badge pill class="float-right">{{ element.order }} / {{ index }}</b-badge>
-            </li>
-          </transition-group>
+          <li class="list-group-item" v-for="(element, index) in list.tasks" :key="element.order">
+            {{element.name}} ( {{element.id}} )
+            <b-badge pill class="float-right">{{ element.order }} / {{ index }}</b-badge>
+          </li>
         </draggable>
       </b-col>
       <b-col>
@@ -112,12 +110,6 @@ export default {
 </script>
 
 <style>
-  .flip-list-move {
-    transition: transform 0.5s;
-  }
-  .no-move {
-    transition: transform 0s;
-  }
   .ghost {
     opacity: .5;
     background: #C8EBFB;
