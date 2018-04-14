@@ -6,7 +6,7 @@
           <transition-group type="transition" :name="'flip-list'">
             <li class="list-group-item" v-for="(element, index) in list.tasks" :key="element.order">
               {{element.name}}
-              <b-badge pill class="float-right">{{ element.order }}</b-badge>
+              <b-badge pill class="float-right">{{ element.order }} / {{ index }}</b-badge>
             </li>
           </transition-group>
         </draggable>
