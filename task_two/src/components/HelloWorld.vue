@@ -102,7 +102,7 @@ export default {
   computed: {
     dragOptions () {
       return {
-        ghostClass: 'ghost'
+        ghostClass: 'mainanimation'
       }
     },
     dataString: function () {
@@ -119,7 +119,7 @@ export default {
   .no-move {
     transition: transform 0s;
   }
-  .ghost {
+  .mainanimation {
     opacity: .5;
     background: #C8EBFB;
   }
