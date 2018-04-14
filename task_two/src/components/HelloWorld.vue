@@ -1,18 +1,18 @@
 <template>
   <b-container>
-    <br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/>
     <b-row>
       <b-col cols="3">
-        <draggable class="list-group" element="ul" v-model="list.tasks" :options="dragOptions" :move="onMove" @end="maindataset">
+        <draggable class="list-group" element="ul" v-model="list.tasks" :options="dragOptions" @end="maindataset">
           <transition-group type="transition" :name="'flip-list'">
-            <li class="list-group-item" v-for="(element, index) in list.tasks" :key="element.order">
+            <li class="card list-group-item" v-for="(element, index) in list.tasks" :key="element.order">
               {{element.name}}
-              <b-badge pill class="float-right">{{ element.order }}/{{index}}</b-badge>
+              <b-badge pill class="float-right">{{ element.order }} / {{ index }}</b-badge>
             </li>
           </transition-group>
         </draggable>
       </b-col>
-      <b-col cols="9">
+      <b-col>
         <pre>
           {{ dataString }}
         </pre>
@@ -63,17 +63,17 @@ export default {
           {
             id: 2,
             name: 'Hello 1',
+            order: 2,
             content: '',
             is_completed: true,
             scheduled_on: null,
             remind_on: null,
             parent: null,
             listed: 1,
-            users: [],
-            order: 2
+            users: []
           },
           {
-            id: 7,
+            id: 3,
             name: 'today',
             content: '',
             is_completed: true,
@@ -90,8 +90,6 @@ export default {
     }
   },
   methods: {
-    onMove ({relatedContext, draggedContext}) {
-    },
     maindataset: function () {
       var listdataset = this.list.tasks
       var listlength = listdataset.length
@@ -103,7 +101,6 @@ export default {
   computed: {
     dragOptions () {
       return {
-        animation: 0,
         ghostClass: 'ghost'
       }
     },
@@ -118,20 +115,18 @@ export default {
   .flip-list-move {
     transition: transform 0.5s;
   }
+
   .no-move {
     transition: transform 0s;
   }
   .ghost {
     opacity: .5;
-    background: lightgray ;
+    background: #C8EBFB;
   }
   .list-group {
     min-height: 20px;
   }
   .list-group-item {
     cursor: move;
-  }
-  .list-group-item i{
-    cursor: pointer;
   }
 </style>
